@@ -261,3 +261,54 @@ body {
     border: 2px solid black;
     background-color: #f5f5f5;
 }
+
+/* Estilos para o Modo Noturno */
+.modo-noturno {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.modo-noturno .ficha-container {
+    background-color: #1e1e1e;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    border-color: #444;
+}
+
+.modo-noturno .ficha-header {
+    border-bottom-color: #e0e0e0;
+}
+
+.modo-noturno .campo input,
+.modo-noturno .campo textarea,
+.modo-noturno .atributo-header input,
+.modo-noturno .defesa-item input,
+.modo-noturno .pericias textarea,
+.modo-noturno .bloco-equipamento textarea,
+.modo-noturno .ponto-container input {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+.modo-noturno .secao {
+    border-color: #444;
+}
+
+.modo-noturno .tabela-dificuldade {
+    border-color: #555;
+}
+
+.modo-noturno .tabela-dificuldade p {
+    border-color: #555;
+}
+
+.modo-noturno .tabela-dificuldade p:nth-child(4n+3),
+.modo-noturno .tabela-dificuldade p:nth-child(4n+4) {
+    background-color: #2e2e2e;
+}
+
+.modo-noturno button {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+    border-color: #e0e0e0;
+}
