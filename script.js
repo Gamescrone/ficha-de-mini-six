@@ -5,7 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnExportarJson = document.getElementById('exportarJson');
     const btnImportarJson = document.getElementById('btnImportar');
     const inputImportar = document.getElementById('importarJson');
+    const btnModoNoturno = document.getElementById('toggle-modo-noturno'); // Novo botão
 
+    // Função para obter os dados da ficha
     function getDadosFicha() {
         const dados = {};
         campos.forEach(campo => {
@@ -69,9 +71,30 @@ document.addEventListener('DOMContentLoaded', () => {
         leitor.readAsText(arquivo);
     }
 
+    // Lógica do Modo Noturno
+    function carregarPreferenciaModoNoturno() {
+        const modoSalvo = localStorage.getItem('modo-noturno');
+        if (modoSalvo === 'ativado') {
+            document.body.classList.add('modo-noturno');
+        }
+    }
+
+    function alternarModoNoturno() {
+        document.body.classList.toggle('modo-noturno');
+        if (document.body.classList.contains('modo-noturno')) {
+            localStorage.setItem('modo-noturno', 'ativado');
+        } else {
+            localStorage.removeItem('modo-noturno');
+        }
+    }
+
+    // Carrega a preferência de modo noturno ao iniciar
+    carregarPreferenciaModoNoturno();
+
     btnExportarJson.addEventListener('click', exportarParaArquivo);
     btnImportarJson.addEventListener('click', () => {
         inputImportar.click();
     });
     inputImportar.addEventListener('change', importarDeArquivo);
+    btnModoNoturno.addEventListener('click', alternarModoNoturno); // Novo listener
 });
