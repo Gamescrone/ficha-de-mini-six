@@ -1,0 +1,263 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Fonte serifada similar */
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.ficha-container {
+    background-color: #ffffff;
+    padding: 30px;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+.ficha-header {
+    grid-column: 1 / 3;
+    text-align: center;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.ficha-header h1 {
+    font-size: 2em;
+    margin: 0;
+    font-weight: 700;
+}
+
+.ficha-header .copyright {
+    font-size: 0.8em;
+    margin: 0;
+}
+
+.informacoes-pessoais {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.campo input, .campo textarea {
+    border: 1px solid #000;
+    padding: 5px;
+    font-size: 1em;
+}
+
+.campo.grande {
+    grid-column: 1 / 3;
+}
+
+.dados-pequenos {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.secao {
+    border: 2px solid black;
+    padding: 15px;
+}
+
+.atributos {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.atributo-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.atributo-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.atributo-header input {
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+    width: 100%;
+}
+
+.pericias {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.pericias label {
+    font-size: 0.8em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.pericias textarea {
+    width: 100%;
+    height: 100%;
+}
+
+.defesas {
+    display: flex;
+    justify-content: space-around;
+}
+
+.defesa-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.defesa-item input {
+    width: 50px;
+    text-align: center;
+}
+
+.secao-ferimentos {
+    grid-column: 1 / 3;
+    border: 2px solid black;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.niveis-ferimentos {
+    border-right: 2px solid black;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.niveis-ferimentos h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.nivel-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.nivel-item label {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.nivel-item input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.tabela-dificuldade {
+    border: 3px double black;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(30px, auto);
+    text-align: center;
+}
+
+.tabela-dificuldade p {
+    margin: 0;
+    padding: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.tabela-dificuldade p:nth-child(4n+3),
+.tabela-dificuldade p:nth-child(4n+4) {
+    background-color: #f0f0f0; /* Cor cinza claro */
+}
+
+.tabela-dificuldade p:nth-child(2n-1) {
+    border-right: 1px solid black;
+}
+
+.tabela-dificuldade p:last-child,
+.tabela-dificuldade p:nth-last-child(2) {
+    border-bottom: none;
+}
+.secao.equipamentos {
+    grid-column: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.bloco-equipamento {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-height: 150px;
+}
+
+.bloco-equipamento label {
+    font-weight: 700;
+    font-size: 0.9em;
+}
+
+.bloco-equipamento textarea {
+    flex-grow: 1;
+    border: 1px solid black;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pontos-equipamentos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ponto-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.botoes-container {
+    grid-column: 1 / 3;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.botoes-container button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 0 10px;
+    border: 2px solid black;
+    background-color: #f5f5f5;
+}
