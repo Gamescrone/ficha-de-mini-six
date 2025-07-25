@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnExportarJson = document.getElementById('exportarJson');
     const btnImportarJson = document.getElementById('btnImportar');
     const inputImportar = document.getElementById('importarJson');
-    const btnModoNoturno = document.getElementById('toggle-modo-noturno'); // Novo botão
+    const btnModoNoturno = document.getElementById('toggle-modo-noturno');
 
     // Função para obter os dados da ficha
     function getDadosFicha() {
@@ -61,6 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
                 statusSalvamento.textContent = 'Ficha importada com sucesso!';
+                // Após importar, reajustar a altura dos textareas
+                document.querySelectorAll('textarea').forEach(autoResizeTextarea);
             } catch (e) {
                 statusSalvamento.textContent = 'Erro ao ler o arquivo JSON.';
             }
@@ -88,6 +90,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- Nova Lógica para Auto-redimensionar Textareas ---
+    const textareas = document.querySelectorAll('textarea');
+
+    function autoResizeTextarea(textarea) {
+        textarea.style.height = 'auto'; // Reset height to recalculate
+        textarea.style.height = textarea.scrollHeight + 'px'; // Set height to fit content
+    }
+
+    // Aplica o auto-redimensionamento ao carregar a página (para conteúdo pré-existente)
+    textareas.forEach(textarea => {
+        autoResizeTextarea(textarea);
+    });
+
+    // Aplica o auto-redimensionamento ao digitar
+    textareas.forEach(textarea => {
+        textarea.addEventListener('input', () => autoResizeTextarea(textarea));
+    });
+    // --- Fim da Nova Lógica ---
+
     // Carrega a preferência de modo noturno ao iniciar
     carregarPreferenciaModoNoturno();
 
@@ -96,5 +117,5 @@ document.addEventListener('DOMContentLoaded', () => {
         inputImportar.click();
     });
     inputImportar.addEventListener('change', importarDeArquivo);
-    btnModoNoturno.addEventListener('click', alternarModoNoturno); // Novo listener
+    btnModoNoturno.addEventListener('click', alternarModoNoturno);
 });
