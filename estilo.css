@@ -108,18 +108,24 @@ body {
 .pericias {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    /* Removida a linha 'height: 100%;' para permitir que a altura se ajuste automaticamente */
+    flex-grow: 1; /* Adiciona flex-grow para que ocupe o espaço disponível e estique a coluna */
 }
 
 .pericias label {
     font-size: 0.8em;
     font-weight: 700;
     text-align: center;
+    margin-bottom: 5px; /* Adicionado um pouco de margem para separar do textarea */
 }
 
 .pericias textarea {
     width: 100%;
-    height: 100%;
+    flex-grow: 1; /* Garante que o textarea preencha todo o espaço disponível verticalmente */
+    border: 1px solid black;
+    padding: 5px; /* Ajustado padding para ser consistente */
+    box-sizing: border-box;
+    min-height: 100px; /* Adiciona uma altura mínima para começar */
 }
 
 .defesas {
