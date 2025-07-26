@@ -75,11 +75,8 @@ body {
 }
 
 .secao {
-    border: 1px solid black;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-    /* Remover 'display: flex', 'flex-direction', 'flex-grow', 'overflow' aqui */
+    border: 2px solid black;
+    padding: 15px;
 }
 
 .atributos {
@@ -111,24 +108,24 @@ body {
 .pericias {
     display: flex;
     flex-direction: column;
-    /* Remover 'flex-grow' daqui */
+    /* Removida a linha 'height: 100%;' para permitir que a altura se ajuste automaticamente */
+    flex-grow: 1; /* Adiciona flex-grow para que ocupe o espaço disponível e estique a coluna */
 }
 
 .pericias label {
     font-size: 0.8em;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 5px; /* Adicionado um pouco de margem para separar do textarea */
 }
 
 .pericias textarea {
     width: 100%;
-    flex-grow: 1;
+    flex-grow: 1; /* Garante que o textarea preencha todo o espaço disponível verticalmente */
     border: 1px solid black;
-    padding: 5px;
+    padding: 5px; /* Ajustado padding para ser consistente */
     box-sizing: border-box;
-    min-height: 100px;
-    resize: none; /* Remover a alça de redimensionamento manual */
+    min-height: 100px; /* Adiciona uma altura mínima para começar */
 }
 
 .defesas {
@@ -331,14 +328,4 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield; /* Firefox */
     appearance: textfield; /* Padrão */
-}
-
-.secao textarea {
-    width: 100%;
-    flex-grow: 1;
-    border: 1px solid black;
-    padding: 5px;
-    box-sizing: border-box;
-    min-height: 80px;
-    resize: none; /* Remover a alça de redimensionamento manual */
 }
