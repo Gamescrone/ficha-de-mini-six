@@ -329,3 +329,24 @@ input[type="number"] {
     -moz-appearance: textfield; /* Firefox */
     appearance: textfield; /* Padrão */
 }
+
+/* Ajustes para espaçamento de texto */
+
+/* Para o texto dentro das caixas de texto (Perícias, Vantagens, Complicações, etc.) */
+.pericias textarea,
+.secao textarea {
+    padding: 8px; /* Aumenta o espaçamento interno das caixas de texto */
+    line-height: 1.5; /* Aumenta o espaçamento entre as linhas do texto */
+}
+
+/* Para parágrafos dentro de seções (como "Níveis de Ferimentos") */
+.secao p {
+    line-height: 1.5; /* Aumenta o espaçamento entre as linhas dos parágrafos */
+    margin-bottom: 5px; /* Adiciona um pequeno espaço abaixo de cada parágrafo */
+}
+
+/* Para o texto dentro da tabela de dificuldade (Muito Fácil, Fácil, etc.) */
+.tabela-dificuldade p {
+    padding: 5px; /* Garante um padding razoável dentro de cada célula/linha */
+    line-height: 1.4; /* Espaçamento entre as linhas dentro das células */
+}
